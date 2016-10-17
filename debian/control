@@ -9,7 +9,7 @@ Homepage: <insert the upstream URL, if relevant>
 #Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/vanished-root-handler.git
 
 Package: vanished-root-handler
-Architecture: any
+Architecture: all
 Depends: openjfx, jarwrapper, libdbus-java, libmatthew-debug-java, libunixsocket-java, memlockd, wmctrl
 Description: Handles a vanished root file system when running a live system
  When the root file system on a live system vanishes, e.g. because the
