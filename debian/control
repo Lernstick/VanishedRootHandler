@@ -9,16 +9,16 @@ Homepage: <insert the upstream URL, if relevant>
 #Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/vanished-root-handler.git
 
 Package: vanished-root-handler
-Architecture: all
+Architecture: any
 Depends: openjfx, jarwrapper, libdbus-java, libmatthew-debug-java, libunixsocket-java, memlockd, wmctrl
 Description: Handles a vanished root file system when running a live system
  When the root file system on a live system vanishes, e.g. because the
  connection between a USB stick and the computer got lost, we have to notify
  the user about this fact and reboot or shutdown the system.
- The problem is that when the root file system is gone we can't even start the
- program to show the error message. Therefore we use memlockd to lock all the
- files we need for showing the error message and shutting down or rebooting into
- memory.
+ The problem is that when the root file system is gone we usually can't even
+ start the program to show the error message. Therefore we use memlockd to lock
+ all the files we need for showing the error message and shutting down or
+ rebooting into memory.
  If it becomes possible in the future to recover from a vanished root file
  system this program should just display a warning and request for re-insertion
  of the disconnected USB stick instead of an error and shutdown/reboot.
