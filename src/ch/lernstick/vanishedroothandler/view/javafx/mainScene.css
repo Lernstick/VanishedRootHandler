@@ -1,0 +1,27 @@
+#main-vbox {
+    -fx-spacing: 30;
+}
+
+#error-label {
+    -fx-alignment: BOTTOM_CENTER;
+    -fx-font-size: 30;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+}
+
+.button {
+    -fx-font-size: 25;
+}
+
+#button-hbox {
+    -fx-alignment: TOP_CENTER;
+    -fx-spacing: 30;
+}
+
+#reboot-button {
+    -fx-graphic: url("/ch/lernstick/vanishedroothandler/view/javafx/icons/reboot.png");
+}
+
+#poweroff-button {
+    -fx-graphic: url("/ch/lernstick/vanishedroothandler/view/javafx/icons/poweroff.png");
+}

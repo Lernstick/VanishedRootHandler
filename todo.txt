@@ -1,0 +1,8 @@
+TODO:
+-----
+- autostart in Enlightenment
+- don't start if root is (officially) not removable?
+- find out what is missing for GNOME based desktops and get rid of the test stage
+- find out what is missing for pkexec and get rid of the dummy pkexec call
+- find a way to prevent other programs to paint over our screen (happens when re-inserting the stick)
+    - dedicated X server ?

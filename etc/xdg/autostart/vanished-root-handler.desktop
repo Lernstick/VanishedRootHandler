@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=vanished_root_handler
+Name=Vanished Root Hanlder
+Type=Application
+Version=1.0
+X-GNOME-Autostart-enabled=true

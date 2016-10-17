@@ -1,0 +1,23 @@
+system calls that matter for file access:
+
+access  : checks, if the user can access the file
+stat    : returns the file attributes
+open    : gets a file descriptor
+readlink: reads a symbolic link
+execve  : executes a file
+
+also add vanished_root_handler binary to memlock config!
+some paths have ".." in them, fix them!
+
+keep only files in the strace file:
+for i in $(cat strace.txt) ; do if [ -f $i ]; then echo $i; fi; done > strace.txt.filesonly
+
+add resolved symlinks:
+for i in $(cat strace.txt.filesonly); do echo $i; if [ -L $i ]; then readlink -f $i; fi; done > strace.txt.resolved
+
+how to log every file access:
+-----------------------------
+$ sudo apt-get install auditd
+$ auditctl -w / -p rwa -k allfiles
+
+then you filter the entries from /var/log/audit/audit.log
