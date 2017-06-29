@@ -4,4 +4,5 @@ etc/memlockd.d/vanished_root_handler.cfg etc/memlockd.d/
 usr/bin/vanished_root_handler_dummy usr/bin/
 usr/bin/vanished_root_handler_poweroff usr/bin/
 usr/bin/vanished_root_handler_reboot usr/bin/
+usr/bin/vanished_root_handler_starter usr/bin/
 usr/share/polkit-1/actions/ch.lernstick.vanishedroothandler.policy usr/share/polkit-1/actions/

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=vanished_root_handler
+Exec=vanished_root_handler_starter
 Name=Vanished Root Hanlder
 Type=Application
 Version=1.0

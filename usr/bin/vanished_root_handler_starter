@@ -1,0 +1,34 @@
+#!/bin/bash
+# A light-weighted script to start vanished_root_handler only if the root is
+# removable.
+set -e
+
+function get_root_device() {
+  # Extract the root mount info, eg.,
+  # overlay on / type overlay (rw,noatime,lowerdir=/live/rootfs/filesystem.squashfs/,upperdir=/live/persistence/sdb2/./rw,workdir=/live/persistence/sdb2/./work)
+  local ROOT_LINE=$(mount | grep '^[^ ]\+ on / ')
+  # Determine by upperdir only.
+  local UPPERDIR=$(echo $ROOT_LINE |
+        sed -e 's/^.*upperdir=//' -e 's/,.*$//')
+  local DEVICE=$(echo $UPPERDIR |
+        sed -e 's,/live/persistence/,,' -e 's,[0-9]\+/.*$,,')
+  if [[ "$TEST_DEVICE" != "" ]]; then
+    # For testing.
+    echo "$TEST_DEVICE"
+  else
+    echo $DEVICE
+  fi
+}
+
+function is_root_removable() {
+  local DEVICE="$(get_root_device)"
+  # Probe to determine whether the device is removable.
+  [[ $(cat /sys/block/${DEVICE}/removable) == "1" ]]
+}
+
+if is_root_removable; then
+  logger "vanished_root_handler: root removable, run."
+  /usr/bin/vanished_root_handler
+else
+  logger "vanished_root_handler: root irremovable, skip."
+fi
