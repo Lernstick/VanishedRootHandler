@@ -1,3 +1,10 @@
+vanished-root-handler (0.3) lernstick-9; urgency=medium
+
+  * [c2cdd0] updated memlockd config file
+  * [540ddb] switched to native package
+
+ -- Ronny Standtke <ronny.standtke@gmx.net>  Sun, 20 May 2018 22:50:01 +0200
+
 vanished-root-handler (0.2-3) lernstick-8; urgency=medium
 
   * [56df7f] fixed control file (again)
