@@ -1,3 +1,9 @@
+vanished-root-handler (0.5) lernstick-9; urgency=medium
+
+  * [387816] radical and final cleanup of the memlockd config file
+
+ -- Ronny Standtke <ronny.standtke@gmx.net>  Mon, 21 May 2018 09:25:43 +0200
+
 vanished-root-handler (0.4) lernstick-9; urgency=medium
 
   * [9037fc] another cleanup of the memlockd config file
