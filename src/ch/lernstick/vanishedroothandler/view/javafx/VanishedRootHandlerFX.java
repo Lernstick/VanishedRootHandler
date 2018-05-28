@@ -55,12 +55,17 @@ public class VanishedRootHandlerFX extends Application {
     public void start(Stage stage) throws Exception {
 
         // load and prepare our main stage and scene
-        Parent root = FXMLLoader.load(
+        FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("MainScene.fxml"), STRINGS);
+        Parent root = loader.load();
+        MainSceneController controller = loader.getController();
         stage.setScene(new Scene(root));
         stage.setFullScreenExitHint("");
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
         stage.setFullScreen(true);
+        stage.setOnShowing((event) -> {
+            controller.countDown();
+        });
 
         if (test) {
             stage.show();

@@ -36,7 +36,12 @@ public class MainSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         rebootButton.setOnAction(a -> VanishedRootHandler.reboot());
         powerOffButton.setOnAction(a -> VanishedRootHandler.powerOff());
+    }
 
+    /**
+     * starts the countdown to a forced reboot
+     */
+    public void countDown() {
         Task<Integer> timeoutTask = new Task<Integer>() {
             @Override
             protected Integer call() throws Exception {
