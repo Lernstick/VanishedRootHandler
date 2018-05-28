@@ -65,7 +65,7 @@
     <target name="1_debian_package">
         <!-- build debian package -->
         <exec executable="dpkg-buildpackage">
-            <arg value="-b"/>
+            <arg value="-sa"/>
         </exec>
         <!-- cleanup -->
         <exec executable="fakeroot">
