@@ -44,6 +44,7 @@ public class MainSceneController implements Initializable {
                     updateProgress(i, TIMEOUT);
                     TimeUnit.SECONDS.sleep(1);
                 }
+                updateProgress(TIMEOUT, TIMEOUT);
                 VanishedRootHandler.reboot();
                 return null;
             }
@@ -53,11 +54,20 @@ public class MainSceneController implements Initializable {
                 Bindings.createStringBinding(() -> {
                     int remainingSeconds = TIMEOUT
                             - (int) (TIMEOUT * timeoutTask.getProgress());
-                    String timeUnitString = STRINGS.getString(
-                            remainingSeconds == 1 ? "Second" : "Seconds");
-                    return MessageFormat.format(
-                            STRINGS.getString("Auto_Reboot_Label"),
-                            remainingSeconds + " " + timeUnitString);
+                    String timeString;
+                    switch (remainingSeconds) {
+                        case 0:
+                            timeString = STRINGS.getString("Now");
+                            break;
+                        case 1:
+                            timeString = STRINGS.getString("Second");
+                            break;
+                        default:
+                            timeString = MessageFormat.format(STRINGS.getString(
+                                    "Seconds"), remainingSeconds);
+                    }
+                    return MessageFormat.format(STRINGS.getString(
+                            "Auto_Reboot_Label"), timeString);
                 }, timeoutTask.progressProperty())
         );
 
