@@ -1,3 +1,9 @@
+vanished-root-handler (0.7) lernstick-9; urgency=medium
+
+  * [419145] fixed countdown string handling
+
+ -- Ronny Standtke <ronny.standtke@gmx.net>  Mon, 28 May 2018 13:05:34 +0200
+
 vanished-root-handler (0.6) lernstick-9; urgency=medium
 
   * [483586] added build target for sorting strings
