@@ -73,4 +73,9 @@
             <arg value="clean"/>
         </exec>
     </target>
+    <target name="2_sort_strings">
+        <exec executable="sh">
+            <arg value="sort_strings.sh"></arg>
+        </exec>
+    </target>    
 </project>
