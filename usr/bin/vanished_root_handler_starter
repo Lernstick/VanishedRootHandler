@@ -1,0 +1,11 @@
+#!/bin/bash
+# A light-weighted script to start vanished_root_handler only if the root is
+# removable.
+set -e
+
+if is_root_removable.sh; then
+  logger "vanished_root_handler: root removable, run."
+  /usr/bin/vanished_root_handler
+else
+  logger "vanished_root_handler: root irremovable, skip."
+fi
