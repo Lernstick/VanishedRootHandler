@@ -1,7 +1,10 @@
 dist/vanished_root_handler usr/bin/
 etc/xdg/autostart/vanished-root-handler.desktop etc/xdg/autostart/
-etc/memlockd.d/vanished_root_handler.cfg etc/memlockd.d/
+usr/bin/is_root_removable.sh usr/bin/
 usr/bin/vanished_root_handler_dummy usr/bin/
 usr/bin/vanished_root_handler_poweroff usr/bin/
 usr/bin/vanished_root_handler_reboot usr/bin/
+usr/bin/vanished_root_handler_starter usr/bin/
+usr/bin/vanished_root_handler_service usr/bin/
 usr/share/polkit-1/actions/ch.lernstick.vanishedroothandler.policy usr/share/polkit-1/actions/
+usr/share/polkit-1/memlockd/vanished_root_handler.cfg usr/share/polkit-1/memlockd

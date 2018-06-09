@@ -1,0 +1,13 @@
+#!/bin/bash
+# A light-weighted script to copy memlockd config if root is removable.
+set -e
+
+SRC_CFG=/usr/share/polkit-1/memlockd/vanished_root_handler.cfg
+CFG=/etc/memlockd.d/vanished_root_handler.cfg
+
+if /usr/bin/is_root_removable.sh; then
+        cp -f $SRC_CFG $CFG
+else
+        rm -f $CFG
+fi
+

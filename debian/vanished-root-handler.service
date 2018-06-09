@@ -1,0 +1,10 @@
+[Unit]
+Description=Dectects if vanished-root-handler is needed.
+Before=memlockd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/vanished_root_handler_service
+
+[Install]
+WantedBy=multi-user.target
