@@ -1,3 +1,14 @@
+vanished-root-handler (0.9) lernstick-9; urgency=medium
+
+  [ Thore Sommer ]
+  * [51c3fb] don't start "vanished_root_handler" and don't lock files with
+             memlockd if root is not removable.
+
+  [ Ronny Standtke ]
+  * [f66aa8] package cleanup and fixes
+
+ -- Ronny Standtke <ronny.standtke@gmx.net>  Sun, 10 Jun 2018 00:35:57 +0200
+
 vanished-root-handler (0.8) lernstick-9; urgency=medium
 
   * [7a9831] fixed package building
