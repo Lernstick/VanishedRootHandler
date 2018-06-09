@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 # A light-weighted script to start vanished_root_handler only if the root is
 # removable.
-set -e
 
-if is_root_removable.sh; then
-  logger "vanished_root_handler: root removable, run."
-  /usr/bin/vanished_root_handler
+if is_root_removable
+then
+	logger -t vanished-root-handler "The root file system is removable, starting up..."
+	vanished_root_handler
 else
-  logger "vanished_root_handler: root irremovable, skip."
+	logger -t vanished-root-handler "The root file system is NOT removable, NOT starting up."
 fi

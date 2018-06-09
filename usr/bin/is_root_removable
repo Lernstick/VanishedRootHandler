@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# this tends to change from release to release...
+LIVE_MOUNTPOINT="/lib/live/mount/medium"
+
+# the only reliable info about our boot medium is the system partition
+SYSTEM_PARTITION="$(grep ${LIVE_MOUNTPOINT} /proc/mounts | awk '{ print $1 }')"
+logger -t vanished-root-handler "system partition: \"${SYSTEM_PARTITION}\""
+
+SYSTEM_DEVICE="$(echo "${SYSTEM_PARTITION}" | sed -e 's|/dev/||g')"
+
+
+if [ -d "/sys/block/${SYSTEM_DEVICE}" ]
+then
+	# The system partition is the block device itself.
+	# (This is mostly the case when booting from DVD.
+	ROOT_DEVICE="${SYSTEM_DEVICE}"
+else
+	# The system partition is not the block device itself.
+	# Therefore we remove any trailing numbers.
+	ROOT_DEVICE="$(echo "${SYSTEM_DEVICE}" | sed -e 's/[0-9]*//g')"
+fi
+
+logger -t vanished-root-handler "root device: \"${ROOT_DEVICE}\""
+
+if [ "$(cat /sys/block/${ROOT_DEVICE}/removable)" = "1" ]
+then
+	logger -t vanished-root-handler "root device is removable"
+	exit 0
+else
+	logger -t vanished-root-handler "root device is NOT removable"
+	exit 1
+fi
