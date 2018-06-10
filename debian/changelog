@@ -1,3 +1,9 @@
+vanished-root-handler (0.10) lernstick-9; urgency=medium
+
+  * [9a2d3d] enable systemd service by default
+
+ -- Ronny Standtke <ronny.standtke@gmx.net>  Sun, 10 Jun 2018 09:30:47 +0200
+
 vanished-root-handler (0.9) lernstick-9; urgency=medium
 
   [ Thore Sommer ]
