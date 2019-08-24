@@ -1,4 +1,4 @@
 #!/usr/bin/dh-exec
-build/libs/VanishedRootHandler.jar => /usr/bin/vanished_root_handler
+build/libs/VanishedRootHandler.jar => /usr/bin/vanished_root_handler.jar
 etc/*	/etc/
 usr/*	/usr/

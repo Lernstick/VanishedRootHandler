@@ -1,0 +1,2 @@
+#!/bin/sh
+java -jar --module-path /usr/share/openjfx/lib/ --add-modules ALL-MODULE-PATH /usr/bin/vanished_root_handler.jar
