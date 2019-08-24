@@ -1,5 +1,5 @@
 #!/bin/sh
-for i in src/ch/lernstick/vanishedroothandler/Strings*
+for i in src/main/resources/ch/lernstick/vanishedroothandler/Strings*
 do
 	sort $i>tmp
 	mv tmp $i

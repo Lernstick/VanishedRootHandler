@@ -1,3 +1,4 @@
-dist/vanished_root_handler usr/bin/
+#!/usr/bin/dh-exec
+build/libs/VanishedRootHandler.jar => /usr/bin/vanished_root_handler
 etc/*	/etc/
 usr/*	/usr/

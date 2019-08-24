@@ -1,0 +1,44 @@
+plugins {
+	id 'java'
+}
+
+dependencies {
+	compile files(
+		'../lernstickTools/build/libs/lernstickTools.jar',
+		'/usr/share/java/dbus.jar',
+		'/usr/share/openjfx/lib/javafx.base.jar',
+		'/usr/share/openjfx/lib/javafx.controls.jar',
+		'/usr/share/openjfx/lib/javafx.fxml.jar',
+		'/usr/share/openjfx/lib/javafx.graphics.jar'
+	)
+}
+
+jar {
+	manifest {
+		attributes(
+			"Main-Class": "ch.lernstick.vanishedroothandler.view.javafx.VanishedRootHandlerFX",
+			"Class-Path": "/usr/share/openjfx/lib/javafx.base.jar /usr/share/openjfx/lib/javafx.controls.jar /usr/share/openjfx/lib/javafx.fxml.jar /usr/share/openjfx/lib/javafx.graphics.jar /usr/share/java/dbus.jar /usr/share/java/unix.jar /usr/share/java/hexdump.jar"
+		)
+	}
+	from(zipTree('../lernstickTools/build/libs/lernstickTools.jar'))
+}
+
+task debianPackage(type:Exec) {
+	dependsOn 'jar'
+	group = 'Tools'
+	description = 'Builds the Debian package.'
+	commandLine 'sh', 'build_debian_package.sh'
+}
+
+task sortStrings(type:Exec) {
+	group = 'Tools'
+	description = 'Sorts the strings in the properties files.'
+	commandLine 'sh', 'sort_strings.sh'
+}
+
+task run(type:Exec) {
+	dependsOn 'jar'
+	group = 'Tools'
+	description = 'Executes the jar file.'
+	commandLine 'java', '-jar', '--module-path', '/usr/share/openjfx/lib/', '--add-modules', 'ALL-MODULE-PATH', 'build/libs/VanishedRootHandler.jar'
+}
