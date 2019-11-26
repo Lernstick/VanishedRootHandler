@@ -2,7 +2,7 @@ Source: vanished-root-handler
 Section: admin
 Priority: optional
 Maintainer: Ronny Standtke <ronny.standtke@gmx.net>
-Build-Depends: debhelper (>=9), dh-exec, gradle
+Build-Depends: debhelper (>=9), dh-exec
 Standards-Version: 3.9.6
 Homepage: https://github.com/imedias/VanishedRootHandler
 
