@@ -1,3 +1,9 @@
+vanished-root-handler (0.13) lernstick-10; urgency=medium
+
+  * updated memlock config file for Debian 10
+
+ -- Ronny <ronny.standtke@gmx.net>  Tue, 26 Nov 2019 10:30:41 +0100
+
 vanished-root-handler (0.12) lernstick-10; urgency=medium
 
   * [e2b72c] added starter script
