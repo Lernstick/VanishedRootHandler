@@ -1,3 +1,13 @@
+vanished-root-handler (0.14) lernstick-10; urgency=medium
+
+  * [658c0a] integrated gradle into Debian build files
+  * [28d5e8] Revert "integrated gradle into Debian build files" (gradle doesn't work with fakeroot)
+  * [b7f9e0] updated mountpoint to Debian 10
+  * [58aae7] use auto-gdk-scale
+  * [6e0c96] added auto-gdk-scale to dependencies
+
+ -- Ronny Standtke <ronny.standtke@gmx.net>  Mon, 13 Apr 2020 18:07:38 +0200
+
 vanished-root-handler (0.13) lernstick-10; urgency=medium
 
   * updated memlock config file for Debian 10
