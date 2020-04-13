@@ -8,7 +8,14 @@ Homepage: https://github.com/imedias/VanishedRootHandler
 
 Package: vanished-root-handler
 Architecture: all
-Depends: openjfx, jarwrapper, libdbus-java, libmatthew-debug-java, libunixsocket-java, memlockd, wmctrl
+Depends: auto-gdk-scale,
+	jarwrapper,
+	libdbus-java,
+	libmatthew-debug-java,
+	libunixsocket-java,
+	memlockd,
+	openjfx,
+	wmctrl
 Description: Handles a vanished root file system when running a live system
  When the root file system on a live system vanishes, e.g. because the
  connection between a USB stick and the computer got lost, we have to notify
